@@ -1,5 +1,5 @@
 # define the version of docker-compose which we gonn use for our project
-version: '3'
+version: '3.6'
 services:
   app:
     build:
