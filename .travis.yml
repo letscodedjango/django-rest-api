@@ -8,5 +8,18 @@ services:
 before_script: pip install docker-compose
 
 script:
-  - docker-compose run app sh -c "python manage.py test"
-  # - docker-compose run app sh -c "python manage.py test && flake8"
+  #- docker-compose run app sh -c "python manage.py test"
+  - docker-compose run app sh -c "python manage.py test && flake8"
+  # - docker-compose run app sh -c "python manage.py test && flake8 --show-source"
+#By adding the --show-source option, it’ll be easier to find out what parts of the source code need to be revised.
+# ./app/calc.py:8:1: E302 expected 2 blank lines, found 1
+# ./app/tests.py:7:80: E501 line too long (82 > 79 characters)
+# ./app/tests.py:9:80: E501 line too long (92 > 79 characters)
+# ./app/settings.py:89:80: E501 line too long (91 > 79 characters)
+# ./app/settings.py:92:80: E501 line too long (81 > 79 characters)
+# ./app/settings.py:95:80: E501 line too long (82 > 79 characters)
+# ./app/settings.py:98:80: E501 line too long (83 > 79 characters)
+
+#To ignore such error we can use ignore= E302, E501 in .flake8 file
+
+# Refer this link for more details - http://books.agiliq.com/projects/essential-python-tools/en/latest/linters.html

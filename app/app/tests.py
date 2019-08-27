@@ -4,7 +4,8 @@ from app.calc import add, sub
 
 class CalcTests(TestCase):
 
-    def test_add_numbers(self):   # the test function must start with test_ always else django will not run that
+    # the test function must start with test_ always else django will not run that
+    def test_add_numbers(self):
         """Test that the function defined to add two numbers are working correctly or not"""
         self.assertTrue(add())
 
