@@ -6,5 +6,5 @@ def add():
     return r
 
 def sub(x, y):
-    r = x -y ;
+    r = x - y
     return r
