@@ -10,6 +10,7 @@ before_script: pip install docker-compose
 script:
   #- docker-compose run app sh -c "python manage.py test"
   - docker-compose run app sh -c "python manage.py test && flake8"
+  # - docker-compose run app sh -c "python manage.py test && flake8 --show-source && autopep8 --in-place "
   # - docker-compose run app sh -c "python manage.py test && flake8 --show-source"
 #By adding the --show-source option, it’ll be easier to find out what parts of the source code need to be revised.
 # ./app/calc.py:8:1: E302 expected 2 blank lines, found 1
